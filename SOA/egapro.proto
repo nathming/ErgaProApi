@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package egapro;
+
+// Message de requête
+message EgaProRequest {
+    string siren = 1;
+}
+
+// Message de réponse
+message EgaProResponse {
+    string entreprise = 1;
+    string region = 2;
+    string departement = 3;
+    float index = 4;
+}
+
+// Service
+service EgaProService {
+    rpc GetEgaProData (EgaProRequest) returns (EgaProResponse);
+}
